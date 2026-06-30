@@ -1,25 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clinical Audits | Elevate Your Standards</title>
-    <!-- Tailwind CSS (Loads styling automatically without needing a separate file) -->
+    <title>Clinical Audits | Dr. Muneeb Ur Rehman</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for typography that matches your design -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-white min-h-screen flex items-center">
+<body class="bg-white text-slate-900 antialiased">
 
-    <!-- Main Container -->
-    <div class="max-w-7xl mx-auto px-6 py-16 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-slate-100 fixed w-full z-50 top-0 transition-all">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="font-extrabold text-xl tracking-tight text-slate-900">
+                    Clinical<span class="text-[#0284c7]">Audits</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-10 text-sm font-semibold text-slate-600">
+                    <a href="#home" class="hover:text-[#0284c7] transition-colors">Home</a>
+                    <a href="#features" class="hover:text-[#0284c7] transition-colors">Features</a>
+                    <a href="#about" class="hover:text-[#0284c7] transition-colors">About</a>
+                </div>
+
+                <!-- Contact Button -->
+                <div>
+                    <a href="#about" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 rounded-full transition-all">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (The part you had in your screenshot) -->
+    <section id="home" class="pt-32 pb-20 lg:pt-48 lg:pb-32 max-w-7xl mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
         
         <!-- Left Side: Text and Buttons -->
         <div class="lg:w-1/2 flex flex-col items-start text-left">
-            
             <!-- Trust Badge -->
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-600 text-sm font-semibold mb-8 border border-blue-100">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -41,102 +66,145 @@
 
             <!-- Action Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a href="#" class="inline-flex justify-center items-center px-8 py-3.5 text-base font-semibold text-white bg-[#0284c7] hover:bg-[#0369a1] rounded-full transition-all duration-200 shadow-lg shadow-blue-500/30">
+                <a href="#features" class="inline-flex justify-center items-center px-8 py-3.5 text-base font-semibold text-white bg-[#0284c7] hover:bg-[#0369a1] rounded-full transition-all duration-200 shadow-lg shadow-blue-500/30">
                     Get Started Now
                 </a>
-                <a href="#" class="inline-flex justify-center items-center px-8 py-3.5 text-base font-semibold text-slate-700 bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 rounded-full transition-all duration-200">
+                <a href="#about" class="inline-flex justify-center items-center px-8 py-3.5 text-base font-semibold text-slate-700 bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 rounded-full transition-all duration-200">
                     Learn More
                 </a>
             </div>
-            
         </div>
 
-        <!-- Right Side: SVG Graphic (Fixes the broken image issue completely) -->
+        <!-- Right Side: SVG Bar Chart Graphic -->
         <div class="lg:w-1/2 w-full mt-12 lg:mt-0 relative group">
-            <!-- Decorative blur behind the graphic -->
             <div class="absolute -inset-4 bg-gradient-to-r from-blue-100 to-teal-50 opacity-70 blur-2xl rounded-full group-hover:opacity-100 transition duration-1000"></div>
             
-            <!-- Custom Medical Data / Dashboard SVG Graphic -->
-            <div class="relative bg-white border border-slate-100 rounded-3xl p-2 shadow-2xl shadow-slate-200/50 overflow-hidden">
-                <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-2xl drop-shadow-sm">
-                    <!-- Background Soft Gradient -->
+            <div class="relative bg-white border border-slate-100 rounded-3xl p-6 shadow-2xl shadow-slate-200/50">
+                <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto rounded-xl">
+                    <!-- Background Grid -->
+                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f1f5f9" stroke-width="1.5"/>
+                    </pattern>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                    
+                    <!-- X and Y Axis -->
+                    <line x1="50" y1="300" x2="450" y2="300" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="50" y1="50" x2="50" y2="300" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+
+                    <!-- Data Bars with Gradient -->
                     <defs>
-                        <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#f8fafc" />
-                            <stop offset="100%" stop-color="#f1f5f9" />
-                        </linearGradient>
-                        <linearGradient id="blue-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <linearGradient id="bar-gradient" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="0%" stop-color="#38bdf8" />
                             <stop offset="100%" stop-color="#0284c7" />
                         </linearGradient>
-                        <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-                            <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#cbd5e1" flood-opacity="0.5"/>
-                        </filter>
                     </defs>
-                    
-                    <!-- SVG Background -->
-                    <rect width="100%" height="100%" fill="url(#bg-grad)" />
-                    
-                    <!-- Abstract Tech Grid -->
-                    <pattern id="dot-grid" width="30" height="30" patternUnits="userSpaceOnUse">
-                        <circle cx="15" cy="15" r="1.5" fill="#cbd5e1" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#dot-grid)" opacity="0.6"/>
 
-                    <!-- Main Dashboard Window/Card -->
-                    <rect x="80" y="60" width="440" height="280" rx="16" fill="#ffffff" filter="url(#shadow)" />
-                    
-                    <!-- Dashboard Header/Menu Bar -->
-                    <rect x="80" y="60" width="440" height="40" rx="16" fill="#f8fafc" />
-                    <circle cx="110" cy="80" r="5" fill="#ef4444" />
-                    <circle cx="130" cy="80" r="5" fill="#f59e0b" />
-                    <circle cx="150" cy="80" r="5" fill="#10b981" />
-                    <!-- Search/Address Bar placeholder -->
-                    <rect x="220" y="72" width="160" height="16" rx="8" fill="#e2e8f0" />
-                    <line x1="80" y1="100" x2="520" y2="100" stroke="#f1f5f9" stroke-width="2" />
+                    <rect x="80" y="200" width="45" height="100" rx="6" fill="#bae6fd" />
+                    <rect x="160" y="140" width="45" height="160" rx="6" fill="#7dd3fc" />
+                    <rect x="240" y="220" width="45" height="80" rx="6" fill="#bae6fd" />
+                    <rect x="320" y="80" width="45" height="220" rx="6" fill="url(#bar-gradient)" />
+                    <rect x="400" y="160" width="45" height="140" rx="6" fill="#7dd3fc" />
 
-                    <!-- Dashboard Sidebar -->
-                    <rect x="80" y="100" width="90" height="240" fill="#f8fafc" />
-                    <!-- Sidebar Menu Lines -->
-                    <rect x="100" y="130" width="50" height="6" rx="3" fill="#cbd5e1" />
-                    <rect x="100" y="150" width="40" height="6" rx="3" fill="#cbd5e1" />
-                    <rect x="100" y="170" width="45" height="6" rx="3" fill="#cbd5e1" />
-                    <rect x="100" y="190" width="35" height="6" rx="3" fill="#cbd5e1" />
-                    
-                    <!-- Medical Cross / Icon in Sidebar -->
-                    <circle cx="125" cy="270" r="20" fill="#e0f2fe" />
-                    <path d="M122 260 h6 v5 h5 v6 h-5 v5 h-6 v-5 h-5 v-6 h5 z" fill="#0284c7" />
+                    <!-- Medical Cross Badge (Top Right) -->
+                    <g transform="translate(420, 20)">
+                        <circle cx="30" cy="30" r="24" fill="#ffffff" filter="drop-shadow(0 4px 6px rgb(0 0 0 / 0.1))" />
+                        <rect x="26" y="16" width="8" height="28" fill="#0284c7" rx="2" />
+                        <rect x="16" y="26" width="28" height="8" fill="#0284c7" rx="2" />
+                    </g>
 
-                    <!-- Main Content Area: Data Trend Line -->
-                    <path d="M 200 280 L 260 230 L 320 250 L 390 150 L 480 180" fill="none" stroke="url(#blue-grad)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                    <!-- Trend Line -->
+                    <path d="M 100 180 L 180 120 L 260 200 L 340 50 L 420 140" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                     
-                    <!-- Trend Line Data Points -->
-                    <circle cx="200" cy="280" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="2" />
-                    <circle cx="260" cy="230" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="2" />
-                    <circle cx="320" cy="250" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="2" />
-                    <circle cx="390" cy="150" r="7" fill="#ffffff" stroke="#0284c7" stroke-width="3" filter="url(#shadow)" />
-                    <circle cx="480" cy="180" r="5" fill="#ffffff" stroke="#0284c7" stroke-width="2" />
-                    
-                    <!-- Floating Audit Statistics Card -->
-                    <rect x="230" y="130" width="110" height="70" rx="8" fill="#ffffff" filter="url(#shadow)" />
-                    <!-- Mini Bar Chart in Card -->
-                    <rect x="245" y="165" width="10" height="20" rx="2" fill="#7dd3fc" />
-                    <rect x="265" y="150" width="10" height="35" rx="2" fill="#0284c7" />
-                    <rect x="285" y="160" width="10" height="25" rx="2" fill="#38bdf8" />
-                    <rect x="305" y="145" width="10" height="40" rx="2" fill="#bae6fd" />
-
-                    <!-- EKG / Vitals Monitor Card (Top Right) -->
-                    <rect x="370" y="115" width="120" height="45" rx="8" fill="#ffffff" filter="url(#shadow)" />
-                    <path d="M 380 135 L 395 135 L 405 125 L 415 145 L 425 135 L 480 135" fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-                    
-                    <!-- Placeholder Text for Data Insights (Bottom Right) -->
-                    <rect x="370" y="270" width="120" height="8" rx="4" fill="#cbd5e1" />
-                    <rect x="370" y="290" width="90" height="8" rx="4" fill="#e2e8f0" />
+                    <!-- Data Points on Trend Line -->
+                    <circle cx="100" cy="180" r="6" fill="#ffffff" stroke="#f59e0b" stroke-width="3" />
+                    <circle cx="180" cy="120" r="6" fill="#ffffff" stroke="#f59e0b" stroke-width="3" />
+                    <circle cx="260" cy="200" r="6" fill="#ffffff" stroke="#f59e0b" stroke-width="3" />
+                    <circle cx="340" cy="50" r="8" fill="#ffffff" stroke="#0284c7" stroke-width="4" />
+                    <circle cx="420" cy="140" r="6" fill="#ffffff" stroke="#f59e0b" stroke-width="3" />
                 </svg>
             </div>
         </div>
-        
-    </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 bg-slate-50 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Smarter Auditing for Modern Healthcare</h2>
+                <p class="text-lg text-slate-600">Automate your clinical data analysis and ensure compliance with our intuitive, fast, and secure tools.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-blue-50 text-[#0284c7] rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Data Automation</h3>
+                    <p class="text-slate-600 leading-relaxed">Leverage Python-based automation to process massive clinical datasets faster and with zero manual errors.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-blue-50 text-[#0284c7] rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Regulatory Compliance</h3>
+                    <p class="text-slate-600 leading-relaxed">Ensure every audit meets strict healthcare standards and regulatory requirements automatically.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                    <div class="w-14 h-14 bg-blue-50 text-[#0284c7] rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-slate-900">Actionable Insights</h3>
+                    <p class="text-slate-600 leading-relaxed">Turn raw clinical data into clear, visual research insights that drive better patient outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section (Restoring your original content) -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+            
+            <div class="inline-block mb-6">
+                <!-- Profile Placeholder (You can replace this with an actual <img> later) -->
+                <div class="w-24 h-24 bg-slate-100 border-4 border-white shadow-lg rounded-full mx-auto flex items-center justify-center text-slate-400 text-3xl font-bold">
+                    M
+                </div>
+            </div>
+            
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">ClinicalAudits Team</h2>
+            <p class="text-[#0284c7] font-semibold tracking-wide uppercase text-sm mb-8">Medicine • Data Science</p>
+            
+            <p class="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+                We are medical professionals focused on the intersection of clinical practice and technical innovation. 
+                Our current work involves streamlining clinical audits and advancing medical research.
+            </p>
+
+            <a href="mailto:your.email@example.com" class="inline-flex justify-center items-center px-8 py-3 text-sm font-semibold text-slate-700 bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 rounded-full transition-all">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="font-bold text-lg text-white">
+                Clinical<span class="text-[#0284c7]">Audits</span>
+            </div>
+            <p class="text-slate-400 text-sm">
+                ClinicalAudits 2026. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+                <a href="#" class="text-slate-400 hover:text-white transition">GitHub</a>
+                <a href="#" class="text-slate-400 hover:text-white transition">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
